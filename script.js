@@ -77,11 +77,11 @@ while (keepGoing) {
     game();
     if (playerWin >= 3) {
         alert("Congratulations! You win.");
-        keepgoing = false;
+        keepGoing = false;
     }
 
     if (computerWin >= 3) {
         alert("Too bad! You lost.");
-        keepgoing = false;
+        keepGoing = false;
     }
 }
