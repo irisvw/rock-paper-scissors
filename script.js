@@ -27,16 +27,19 @@ function capitalizeInput(input) {
   }
 
 function getPlayerChoice() {
-    let input = prompt("Rock, paper, or scissors?");
-    let playerChoice = capitalizeInput(input);
+    let valid = false;
+    while (!valid) {
+        let input = prompt("Rock, paper, or scissors?");
+        let playerChoice = capitalizeInput(input);
 
-    if (playerChoice === "Rock" || playerChoice === "Paper" || playerChoice === "Scissors") {
-        return playerChoice;
+        if (playerChoice === "Rock" || playerChoice === "Paper" || playerChoice === "Scissors") {
+            valid = true;
+            return playerChoice;
+        }
+        else {
+            alert("Invalid input.");
+        }
     }
-    else {
-        alert("Invalid input.");
-    }
-
 }
 
 function playRound(computerChoice, playerChoice) {
