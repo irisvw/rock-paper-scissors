@@ -27,7 +27,7 @@ function capitalizeInput(input) {
   }
 
 function getPlayerChoice() {
-    input = prompt("Rock, paper, or scissors?");
+    let input = prompt("Rock, paper, or scissors?");
     let playerChoice = capitalizeInput(input);
 
     if (playerChoice === "Rock" || playerChoice === "Paper" || playerChoice === "Scissors") {
@@ -70,7 +70,6 @@ function game(){
 
 let playerWin = 0;
 let computerWin = 0;
-let totalGameCount = 0;
 let keepGoing = true;
 
 while (keepGoing) {
