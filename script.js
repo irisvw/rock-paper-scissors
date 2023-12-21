@@ -34,7 +34,7 @@ function getPlayerChoice() {
         return playerChoice;
     }
     else {
-        alert("Invalid input.")
+        alert("Invalid input.");
     }
 
 }
@@ -46,21 +46,42 @@ function playRound(computerChoice, playerChoice) {
     else if ((computerChoice === "Rock" && playerChoice === "Scissors") ||
         (computerChoice === "Scissors" && playerChoice === "Paper") ||
         (computerChoice === "Paper" && playerChoice === "Rock")) {
-        alert(`You lose! ${computerChoice} beats ${playerChoice}.`)
+        alert(`You lose! ${computerChoice} beats ${playerChoice}.`);
+        return "computer";
     }
     else {
-        alert(`You win! ${playerChoice} beats ${computerChoice}.`)
+        alert(`You win! ${playerChoice} beats ${computerChoice}.`);
+        return "player";
     }
 }
 
+function game(){
+    let winner = playRound(getComputerChoice(), getPlayerChoice())
+    if (winner === "player") {
+        playerWin++;
+    }
+    else if (winner === "computer") {
+        computerWin++;
+    }
+    else {
+        console.log("it's a tie.");
+    }
+}
 
-// function playRound(computerChoice, playerChoice) {
-//     if (computerChoice === playerChoice) {
-//         alert ("It's a tie! Try again.");
-//     }
-//     else if (computerChoice === "Rock" && playerChoice === "scissors") {
-//         alert ("You lose! Rock beats scissors."
-//         )
-//     }
+let playerWin = 0;
+let computerWin = 0;
+let totalGameCount = 0;
+let keepgoing = true;
 
-// }
+while (keepgoing) {
+    game();
+    if (playerWin >= 3) {
+        alert("Congratulations! You win.");
+        keepgoing = false;
+    }
+
+    if (computerWin >= 3) {
+        alert("Too bad! You lost.");
+        keepgoing = false;
+    }
+}
