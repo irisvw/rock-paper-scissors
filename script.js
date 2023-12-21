@@ -71,9 +71,9 @@ function game(){
 let playerWin = 0;
 let computerWin = 0;
 let totalGameCount = 0;
-let keepgoing = true;
+let keepGoing = true;
 
-while (keepgoing) {
+while (keepGoing) {
     game();
     if (playerWin >= 3) {
         alert("Congratulations! You win.");
