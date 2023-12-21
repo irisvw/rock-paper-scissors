@@ -27,19 +27,25 @@ function capitalizeInput(input) {
   }
 
 function getPlayerChoice() {
-    playerChoice = prompt("Rock, paper, or scissors?");
-    capitalizeInput(playerChoice);
-    console.log(playerChoice);
-    return playerChoice;
+    input = prompt("Rock, paper, or scissors?");
+    let playerChoice = capitalizeInput(input);
+
+    if (playerChoice === "Rock" || playerChoice === "Paper" || playerChoice === "Scissors") {
+        return playerChoice;
+    }
+    else {
+        alert("Invalid input.")
+    }
+
 }
 
 function playRound(computerChoice, playerChoice) {
     if (computerChoice === playerChoice) {
         alert("It's a tie! Try again.");
     }
-    else if ((computerChoice === "Rock" && playerChoice === "scissors") ||
-        (computerChoice === "Scissors" && playerChoice === "paper") ||
-        (computerChoice === "Paper" && playerChoice === "rock")) {
+    else if ((computerChoice === "Rock" && playerChoice === "Scissors") ||
+        (computerChoice === "Scissors" && playerChoice === "Paper") ||
+        (computerChoice === "Paper" && playerChoice === "Rock")) {
         alert(`You lose! ${computerChoice} beats ${playerChoice}.`)
     }
     else {
