@@ -27,16 +27,19 @@ function capitalizeInput(input) {
   }
 
 function getPlayerChoice() {
-    input = prompt("Rock, paper, or scissors?");
-    let playerChoice = capitalizeInput(input);
+    let valid = false;
+    while (!valid) {
+        let input = prompt("Rock, paper, or scissors?");
+        let playerChoice = capitalizeInput(input);
 
-    if (playerChoice === "Rock" || playerChoice === "Paper" || playerChoice === "Scissors") {
-        return playerChoice;
+        if (playerChoice === "Rock" || playerChoice === "Paper" || playerChoice === "Scissors") {
+            valid = true;
+            return playerChoice;
+        }
+        else {
+            alert("Invalid input.");
+        }
     }
-    else {
-        alert("Invalid input.");
-    }
-
 }
 
 function playRound(computerChoice, playerChoice) {
@@ -70,18 +73,17 @@ function game(){
 
 let playerWin = 0;
 let computerWin = 0;
-let totalGameCount = 0;
 let keepGoing = true;
 
 while (keepGoing) {
     game();
     if (playerWin >= 3) {
         alert("Congratulations! You win.");
-        keepgoing = false;
+        keepGoing = false;
     }
 
     if (computerWin >= 3) {
         alert("Too bad! You lost.");
-        keepgoing = false;
+        keepGoing = false;
     }
 }
