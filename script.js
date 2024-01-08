@@ -33,15 +33,13 @@ function playRound(computerChoice, playerChoice) {
         (computerChoice === "Paper" && playerChoice === "Rock")) {
         container.textContent = `You lose! ${computerChoice} beats ${playerChoice}.`;
         computerWin++;
-        score.textContent = `Player: ${playerWin}
-        Computer: ${computerWin}`;
+        score.textContent = `${playerWin} - ${computerWin}`;
         announceWinner();
     }
     else {
         container.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         playerWin++;
-        score.textContent = `Player: ${playerWin}
-        Computer: ${computerWin}`;
+        score.textContent = `${playerWin} - ${computerWin}`;
         announceWinner();
     }
 }
@@ -74,10 +72,9 @@ function announceWinner() {
             winner.textContent = "Too bad! You lost.";
             tryAgain.setAttribute('style', 'display: block');
         }
-        
+
         playerWin = 0;
         computerWin = 0;
-        score.textContent = `Player: ${playerWin}
-        Computer: ${computerWin}`;
+        score.textContent = `${playerWin} - ${computerWin}`;
     }
 }
