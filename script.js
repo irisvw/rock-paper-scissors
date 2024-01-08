@@ -24,6 +24,7 @@ function getComputerChoice() {
 
 function playRound(computerChoice, playerChoice) {
     winner.textContent = "";
+    tryAgain.setAttribute('style', 'display: none');
     if (computerChoice === playerChoice) {
         container.textContent = "It's a tie! Try again.";
     }
@@ -44,7 +45,6 @@ function playRound(computerChoice, playerChoice) {
         announceWinner();
     }
 }
-
 
 let playerWin = 0;
 let computerWin = 0;
@@ -69,8 +69,10 @@ function announceWinner() {
     if (playerWin >= 5 || computerWin >= 5) {
         if (playerWin > computerWin) {
             winner.textContent = "Congratulations! You win.";
+            tryAgain.setAttribute('style', 'display: block');
         } else {
             winner.textContent = "Too bad! You lost.";
+            tryAgain.setAttribute('style', 'display: block');
         }
         
         playerWin = 0;

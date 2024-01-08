@@ -1,0 +1,87 @@
+html,
+body {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header,
+footer {
+    background-color: rgb(27, 27, 27);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+}
+
+button {
+    height: 400px;
+    width: 400px;
+    padding: 2rem;
+    border-radius: 25px;
+    background-color: white;
+}
+
+button:hover {
+    background-color: lightgrey;
+}
+
+button:active {
+    background-color: white;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.buttonsDiv {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+#score, #container {
+    font-size: 24px;
+    text-align: center;
+    padding: 2rem;
+}
+
+#winner {
+    font-size: 36px;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+#tryAgain {
+    text-align: center;
+    padding: .5rem;
+    font-size: 16px;
+    font-weight: light;
+    margin-top: -1rem;
+    display: none;
+}
