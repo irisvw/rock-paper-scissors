@@ -23,6 +23,7 @@ function getComputerChoice() {
 }
 
 function playRound(computerChoice, playerChoice) {
+    winner.textContent = "";
     if (computerChoice === playerChoice) {
         container.textContent = "It's a tie! Try again.";
     }
@@ -33,14 +34,17 @@ function playRound(computerChoice, playerChoice) {
         computerWin++;
         score.textContent = `Player: ${playerWin}
         Computer: ${computerWin}`;
+        announceWinner();
     }
     else {
         container.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         playerWin++;
         score.textContent = `Player: ${playerWin}
         Computer: ${computerWin}`;
+        announceWinner();
     }
 }
+
 
 let playerWin = 0;
 let computerWin = 0;
@@ -60,3 +64,18 @@ paperButton.addEventListener('click', () => {
 scissorsButton.addEventListener('click', () => {
     playRound(getComputerChoice(), "Scissors");
 })
+
+function announceWinner() {
+    if (playerWin >= 5 || computerWin >= 5) {
+        if (playerWin > computerWin) {
+            winner.textContent = "Congratulations! You win.";
+        } else {
+            winner.textContent = "Too bad! You lost.";
+        }
+        
+        playerWin = 0;
+        computerWin = 0;
+        score.textContent = `Player: ${playerWin}
+        Computer: ${computerWin}`;
+    }
+}
