@@ -66,10 +66,10 @@ scissorsButton.addEventListener('click', () => {
 function announceWinner() {
     if (playerWin >= 5 || computerWin >= 5) {
         if (playerWin > computerWin) {
-            winner.textContent = "Congratulations! You win.";
+            winner.textContent = `Congratulations! You win with a score of ${playerWin} - ${computerWin}.`;
             tryAgain.setAttribute('style', 'display: block');
         } else {
-            winner.textContent = "Too bad! You lost.";
+            winner.textContent = `Too bad! You lost with a score of ${playerWin} - ${computerWin}.`;
             tryAgain.setAttribute('style', 'display: block');
         }
 
