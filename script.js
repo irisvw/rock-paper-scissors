@@ -23,17 +23,21 @@ function getComputerChoice() {
 }
 
 function playRound(computerChoice, playerChoice) {
+    const result = document.createElement('p');
     if (computerChoice === playerChoice) {
-        alert("It's a tie! Try again.");
+        result.textContent = "It's a tie! Try again.";
+        container.appendChild(result);
     }
     else if ((computerChoice === "Rock" && playerChoice === "Scissors") ||
         (computerChoice === "Scissors" && playerChoice === "Paper") ||
         (computerChoice === "Paper" && playerChoice === "Rock")) {
-        alert(`You lose! ${computerChoice} beats ${playerChoice}.`);
+        result.textContent = `You lose! ${computerChoice} beats ${playerChoice}.`;
+        container.appendChild(result);
         return "computer";
     }
     else {
-        alert(`You win! ${playerChoice} beats ${computerChoice}.`);
+        result.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
+        container.appendChild(result);
         return "player";
     }
 }
