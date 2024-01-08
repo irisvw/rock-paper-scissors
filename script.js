@@ -23,55 +23,27 @@ function getComputerChoice() {
 }
 
 function playRound(computerChoice, playerChoice) {
-    const result = document.createElement('p');
     if (computerChoice === playerChoice) {
-        result.textContent = "It's a tie! Try again.";
-        container.appendChild(result);
+        container.textContent = "It's a tie! Try again.";
     }
     else if ((computerChoice === "Rock" && playerChoice === "Scissors") ||
         (computerChoice === "Scissors" && playerChoice === "Paper") ||
         (computerChoice === "Paper" && playerChoice === "Rock")) {
-        result.textContent = `You lose! ${computerChoice} beats ${playerChoice}.`;
-        container.appendChild(result);
-        return "computer";
-    }
-    else {
-        result.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
-        container.appendChild(result);
-        return "player";
-    }
-}
-
-function game() {
-    let winner = playRound(getComputerChoice(), getPlayerChoice())
-    if (winner === "player") {
-        playerWin++;
-    }
-    else if (winner === "computer") {
+        container.textContent = `You lose! ${computerChoice} beats ${playerChoice}.`;
         computerWin++;
+        score.textContent = `Player: ${playerWin}
+        Computer: ${computerWin}`;
     }
     else {
-        console.log("it's a tie.");
+        container.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
+        playerWin++;
+        score.textContent = `Player: ${playerWin}
+        Computer: ${computerWin}`;
     }
 }
 
 let playerWin = 0;
 let computerWin = 0;
-
-// let keepGoing = true;
-
-// while (keepGoing) {
-//     game();
-//     if (playerWin >= 3) {
-//         alert("Congratulations! You win.");
-//         keepGoing = false;
-//     }
-
-//     if (computerWin >= 3) {
-//         alert("Too bad! You lost.");
-//         keepGoing = false;
-//     }
-// }
 
 let rockButton = document.querySelector('#rockButton');
 let paperButton = document.querySelector('#paperButton');
